@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-class ButtonFrame extends JFrame {
+public class ButtonFrame extends JFrame {
     private final JButton plainJButton;
     private final JButton fancyJButton;
 
@@ -29,12 +29,10 @@ class ButtonFrame extends JFrame {
         plainJButton.addActionListener(handler);
     }
 
-    
-}
-
- class ButtonHandler implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        JOptionPane.showMessageDialog(ButtonFrame.this, String.format("You clicked: %s", event.getActionCommand()));
+    private class ButtonHandler implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            JOptionPane.showMessageDialog(ButtonFrame.this, String.format("You clicked: %s", event.getActionCommand()));
+        }
     }
 }
